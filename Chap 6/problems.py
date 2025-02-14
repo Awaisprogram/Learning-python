@@ -1,21 +1,21 @@
 #1.
 
-# a = int(input("Enter first number: "))
-# b = int(input("Enter second number: "))
-# c = int(input("Enter third number: "))
-# d = int(input("Enter fourth number: "))
+ a = int(input("Enter first number: "))
+ b = int(input("Enter second number: "))
+ c = int(input("Enter third number: "))
+ d = int(input("Enter fourth number: "))
 
-# if a>=b and a>=c and a>=d:
-#   greatest = a
-# elif b>=a and b>=c and b>=d:
-#   greatest = b
+ if a>=b and a>=c and a>=d:
+   greatest = a
+ elif b>=a and b>=c and b>=d:
+   greatest = b
 
-# elif c>=a and c>=b and c>=d:
-#   greatest = b
-# else:
-#   greatest = d
+ elif c>=a and c>=b and c>=d:
+   greatest = b
+ else:
+   greatest = d
 
-# print(f"\nThe greatest number is: {greatest}")
+ print(f"\nThe greatest number is: {greatest}")
 
 #2.
 
