@@ -1,18 +1,18 @@
 # 1
 
-# def fun(name):
-#   print(f"Have a nice day {name}")
-# fun("Awais")  
+def fun(name):
+  print(f"Have a nice day {name}")
+fun("Awais")  
 
 #2
 
-# def fun2():
-#   a = int( input("Enter a number:"))
-#   b = int( input("Enter a number:"))
-#   result =  a+b
+def fun2():
+  a = int( input("Enter a number:"))
+  b = int( input("Enter a number:"))
+  result =  a+b
 
-#   print(result)  
-# fun2()
+  print(result)  
+fun2()
 
 #3
 
