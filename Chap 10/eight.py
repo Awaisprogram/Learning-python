@@ -2,19 +2,19 @@
 
 # Basic class
 
-# class Employee: #noun | class 
-#   #adjective | attribute
-#   language = "Python"
-#   salary = 100000
+class Employee: #noun | class 
+  #adjective | attribute
+  language = "Python"
+  salary = 100000
 
 
-# Awais = Employee #verb | Class attribute
-# Awais.name = "Awais" 
-# print(Awais.name, Awais.language, Awais.salary)
+Awais = Employee #verb | Class attribute
+Awais.name = "Awais" 
+print(Awais.name, Awais.language, Awais.salary)
 
-# Waleed = Employee
-# Waleed.name = "Waleed" #instance attribute
-# print(Waleed.name, Waleed.language, Waleed.salary)
+Waleed = Employee
+Waleed.name = "Waleed" #instance attribute
+print(Waleed.name, Waleed.language, Waleed.salary)
 
 # Here name is instance attribue and salary and language are class attributes as ther directly belong to the class
 
@@ -24,62 +24,62 @@
 # Instance vs Class Attributes
 
 
-# class Employee: 
+class Employee: 
   
-#   language = "Python"
-#   salary = 100000
+  language = "Python"
+  salary = 100000
 
 
-# Awais = Employee #verb | Class attribute
-# Awais.language = "JavaScript" #instance attribute
-# print(Awais.language, Awais.salary)
+Awais = Employee #verb | Class attribute
+Awais.language = "JavaScript" #instance attribute
+print(Awais.language, Awais.salary)
 
 #########################################
 
 #   Self Parameter
 
 
-# class Employee: 
+class Employee: 
   
-#   language = "Python"
-#   salary = 100000
+  language = "Python"
+  salary = 100000
 
-#   def greet(self):
-#     print("Good Morning")
+  def greet(self):
+    print("Good Morning")
 
-#   def getInfo(self):
-#     print(f"The language is {self.language} and the salary is {self.salary}")
+  def getInfo(self):
+    print(f"The language is {self.language} and the salary is {self.salary}")
 
   
-# Awais = Employee() #verb | Class attribute
-# Awais.language = "JavaScript" #instance attribute
-# print(Awais.language, Awais.salary)
-# Awais.greet()
-# Awais.getInfo()
+Awais = Employee() #verb | Class attribute
+Awais.language = "JavaScript" #instance attribute
+print(Awais.language, Awais.salary)
+Awais.greet()
+Awais.getInfo()
 
 
 #########################################
 
 #   Static Method
 
-# class Employee: 
+class Employee: 
   
-#   language = "Python"
-#   salary = 100000
+  language = "Python"
+  salary = 100000
 
-#   @staticmethod
-#   def greet():
-#     print("Good Morning")
+  @staticmethod
+  def greet():
+    print("Good Morning")
 
-#   def getInfo(self):
-#     print(f"The language is {self.language} and the salary is {self.salary}")
+  def getInfo(self):
+    print(f"The language is {self.language} and the salary is {self.salary}")
 
   
-# Awais = Employee() #verb | Class attribute
-# Awais.language = "JavaScript" #instance attribute
-# print(Awais.language, Awais.salary)
-# Employee.greet()
-# Awais.getInfo()
+Awais = Employee() #verb | Class attribute
+Awais.language = "JavaScript" #instance attribute
+print(Awais.language, Awais.salary)
+Employee.greet()
+Awais.getInfo()
 
 #########################################
 
