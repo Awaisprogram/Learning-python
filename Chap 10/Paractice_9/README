@@ -1,0 +1,56 @@
+# Object oriented program (OOPS)
+
+#  Solving th problem by creating object on using reuseable code (DRY)
+
+# Deals with classes and object
+
+# 1.Class
+
+"""
+Class is the blue print to create object
+
+when class is filled with details become object 
+
+we can make multiple different object using class
+
+when class is defined a tempelate is defined
+
+"""
+
+# 2. Object
+
+"""
+Object is an instantiation of a class
+
+Memory is allocated only after object instatiation
+
+Objects of a given class can invoke the methods available to it without revealing the implementation details to the user
+called 
+
+Abstraction & Encapsulation
+
+"""
+
+# Here name is object attribue and salary and language are class attributes as ther directly belong to the class
+
+# Instance vs Class Attributes
+
+
+class Employee: 
+  
+  language = "Python"
+  salary = 100000
+
+
+Awais = Employee # Class attribute
+Awais.language = "JavaScript" #instance attribute
+print(Awais.language, Awais.salary)
+
+# Here print Javascipt 100000
+
+"""
+The reason is instance attribute get preference over class attribute,
+during assignment and retrival
+"""
+
+# __init__ is an special method called as dunnder method which is automaicaly called
