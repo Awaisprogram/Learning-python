@@ -1,96 +1,200 @@
-# Inheritance
 
-# Creating a  new class using an existing class
+## 🔥 Object-Oriented Programming (OOP) in Python
 
+### 1. 🎯 OOP Goals
+
+* ✅ **Reduce Redundancy**
+* 🔁 **Increase Reusability**
+
+---
+
+### 2. 🧱 Classes and Objects
+
+* A **class** is a blueprint that defines what attributes and behaviors an object will have.
+* An **object** is an instance of a class.
+
+```python
+class Car:
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
+
+car1 = Car("Toyota", "Red")
+```
+
+---
+
+### 3. 🛠️ The Constructor: `__init__()`
+
+* Automatically runs when an object is created.
+* `self` refers to the **current object instance**.
+
+```python
+def __init__(self, name):
+    self.name = name
+```
+
+---
+
+### 4. 🧾 Class Attributes & Methods
+
+* **Attributes** = variables that hold data (e.g., `self.name`)
+* **Methods** = functions that belong to a class
+
+```python
+class Student:
+    college = "ABC University"  # class attribute
+
+    def show_details(self):
+        print(f"{self.name} studies at {Student.college}")
+```
+
+---
+
+### 5. 📌 Static Methods
+
+* Don’t need access to instance (`self`) or class (`cls`)
+* Use `@staticmethod` decorator
+
+```python
+class Math:
+    @staticmethod
+    def add(a, b):
+        return a + b
+```
+
+---
+
+### 6. 🧱 Pillars of OOP
+
+1. **Abstraction** – Hide complexity, show only essentials
+2. **Encapsulation** – Wrap data and methods into one unit
+3. **Inheritance** – Reuse code across classes
+4. **Polymorphism** – Use the same method in different ways
+
+---
+
+### 7. 🔄 Inheritance
+
+* Allows a class to **inherit attributes and methods** from another class
+
+```python
 class Employee:
-  company = "Karachi"
-
-  def showSelf(self):
-    print(f"The name of Employee is {self.name} and his salary is {self.salary}")
-
-
-# We can use simply this code but if we wanna change the code later , we could face erros and have to change in every line, but inheritance allows programers to write code once and use multiple times
-
-"""
-class Programmer:
-  company = "Karachi University"
-
-  def showSelf(self):
-    print(f"The name of Programmer is {self.name} and his salary is {self.salary}")
-   
-  def showLanguage(self):
-    print(f"The name of Programmer is {self.name} and his salary is {self.salary}")
-"""
-
-# Inherited Class
+    def show(self):
+        print("I am an employee")
 
 class Programmer(Employee):
-  company = "Karachi University"
+    def show_language(self):
+        print("I write code")
+```
 
-  def showLanguage(self):
-    print(f"The name of Programmer is {self.name} and his salary is {self.salary}")    
+---
 
-a = Employee()
-b = Programmer()
+### 8. 🧬 Types of Inheritance
 
-print(a.company, b.company)
+#### ✅ Single Inheritance
 
+```python
+class A:
+    pass
 
-# Types of Inheritance
+class B(A):
+    pass
+```
 
-"""
-1. Single Inheritance
-2. Multiple Inheritance
-3. Multilevel Inheritance
-"""
+#### ✅ Multiple Inheritance
 
-# 1. Single Inheritance
+```python
+class A:
+    pass
 
-"""
-Single inheritance occurs when child class inherits only a single parent class
-        Base ->   Derived
-        
-"""
+class B:
+    pass
 
-# 2. Multiple Inheritance
+class C(A, B):
+    pass
+```
 
+#### ✅ Multilevel Inheritance
 
-"""
-Multiple inheritance occurs when child class inherits from more than one parent class
-        Parent1 + Parent2  ->   Child
-        
-"""    
+```python
+class A:
+    pass
 
-# 3. Multilevel Inheritance
+class B(A):
+    pass
 
-"""
-When a child class becomes a parent from another child class
-        Parent   ->  Child1  ->   Child2 
-"""
+class C(B):
+    pass
+```
 
+---
 
+### 9. 🧓 `super()` Method
 
-# Super Method
-"""
-super().__init__()
+* Used to call the **parent class constructor** or methods
 
-Run the constructor of its parent
+```python
+class A:
+    def __init__(self):
+        print("A constructor")
 
-"""
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print("B constructor")
+```
 
-# Class Method
+---
 
-"""
-We can  directly use class attribute by using this decrator. 
-A class method is a method which is bound to class and not the object of the class
-Self is the object in which mehthod is running
-"""
-# Property Decorator
+### 10. 🏷️ Class Method
 
+* Works with class variables
+* Uses `@classmethod` decorator and `cls` parameter
 
-# Operators overloading
-"""
+```python
+class School:
+    school_name = "ABC School"
 
-operators in python can be overloaded using dunder methods
-There methods are called when a given operator is used on objects 
-"""
+    @classmethod
+    def change_school(cls, name):
+        cls.school_name = name
+```
+
+---
+
+### 11. 🧩 Property Decorator
+
+* Turn a method into a **read-only attribute**
+
+```python
+class Person:
+    def __init__(self, age):
+        self._age = age
+
+    @property
+    def age(self):
+        return self._age
+```
+
+---
+
+### 12. ➕ Operator Overloading
+
+* Customize operators for your classes using **dunder methods**
+
+```python
+class Vector:
+    def __init__(self, x):
+        self.x = x
+
+    def __add__(self, other):
+        return Vector(self.x + other.x)
+
+v1 = Vector(2)
+v2 = Vector(3)
+v3 = v1 + v2  # Uses __add__
+```
+
+---
+
