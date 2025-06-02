@@ -1,0 +1,56 @@
+# Advance Python
+
+# Valrus operator
+
+"""
+An operator allow to asign values to variables as part of expression
+
+"""
+
+# Exception Handling
+
+"""
+There are many built in exceptions which are raised in Python when something goes wrong
+Exception in Python can be handled using a try statement 
+"""
+
+# Try with Finally    
+
+"""
+We use finally to show message at the end of program, it runs on both situation either program run successfully or not. But the question arises why we can not only print the message at the end of function id if we just want to show a message, The answer is finally would shown message in function if the method is return
+"""
+
+# Enamurate
+
+
+""" 
+l = [1,23,36,43]
+
+index = 0
+for item in l:
+  print(f"The item number {index} is {item}")
+  index +=1
+
+This is can be simplify using enamurating function
+
+for index,item in enumerate(l):
+   print(f"The item number {index} is {item}")
+"""
+
+
+# List Comprehension  
+
+"""
+Elegant way to create list based on existing list
+
+l = [1,2,3,4]
+
+sqauredList = []
+
+for item in l:
+   sqauredList.append(item*item)
+print(sqauredList)  
+
+sqauredList = [i*i for i in l]
+print(sqauredList)
+"""
