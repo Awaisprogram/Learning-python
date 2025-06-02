@@ -1,16 +1,17 @@
 
-## 🔥 Object-Oriented Programming (OOP) in Python
 
-### 1. 🎯 OOP Goals
+# 🔥 Object-Oriented Programming (OOP) in Python
+
+## 1. 🎯 Goals of OOP
 
 * ✅ **Reduce Redundancy**
 * 🔁 **Increase Reusability**
 
 ---
 
-### 2. 🧱 Classes and Objects
+## 2. 🧱 Class & Object
 
-* A **class** is a blueprint that defines what attributes and behaviors an object will have.
+* A **class** is a blueprint that defines the structure and behavior of objects.
 * An **object** is an instance of a class.
 
 ```python
@@ -24,26 +25,30 @@ car1 = Car("Toyota", "Red")
 
 ---
 
-### 3. 🛠️ The Constructor: `__init__()`
+## 3. 🛠️ Constructor `__init__()`
 
-* Automatically runs when an object is created.
-* `self` refers to the **current object instance**.
+* Automatically called when an object is created.
+* `self` refers to the current object instance.
 
 ```python
-def __init__(self, name):
-    self.name = name
+class Person:
+    def __init__(self, name):
+        self.name = name
 ```
 
 ---
 
-### 4. 🧾 Class Attributes & Methods
+## 4. 📦 Attributes & Methods
 
-* **Attributes** = variables that hold data (e.g., `self.name`)
-* **Methods** = functions that belong to a class
+* **Attributes** are variables that store data in a class.
+* **Methods** are functions defined inside a class.
 
 ```python
 class Student:
-    college = "ABC University"  # class attribute
+    college = "ABC University"  # Class attribute
+
+    def __init__(self, name):
+        self.name = name          # Instance attribute
 
     def show_details(self):
         print(f"{self.name} studies at {Student.college}")
@@ -51,10 +56,33 @@ class Student:
 
 ---
 
-### 5. 📌 Static Methods
+## 5. ⚙️ Types of Methods
 
-* Don’t need access to instance (`self`) or class (`cls`)
-* Use `@staticmethod` decorator
+### ✅ Instance Method
+
+* Takes `self` as the first parameter.
+* Can access and modify object attributes.
+
+### ✅ Class Method
+
+* Takes `cls` as the first parameter.
+* Can access and modify class variables.
+* Use `@classmethod` decorator.
+
+```python
+class School:
+    name = "ABC School"
+
+    @classmethod
+    def change_name(cls, new_name):
+        cls.name = new_name
+```
+
+### ✅ Static Method
+
+* Doesn’t take `self` or `cls`.
+* Used for utility tasks.
+* Use `@staticmethod` decorator.
 
 ```python
 class Math:
@@ -65,44 +93,34 @@ class Math:
 
 ---
 
-### 6. 🧱 Pillars of OOP
+## 6. 👑 Pillars of OOP
 
-1. **Abstraction** – Hide complexity, show only essentials
-2. **Encapsulation** – Wrap data and methods into one unit
-3. **Inheritance** – Reuse code across classes
-4. **Polymorphism** – Use the same method in different ways
-
----
-
-### 7. 🔄 Inheritance
-
-* Allows a class to **inherit attributes and methods** from another class
+1. **Abstraction** – Hide complex logic, show only essentials.
+2. **Encapsulation** – Bind data and methods into one unit.
+3. **Inheritance** – Reuse code by deriving from existing classes.
+4. **Polymorphism** – Same function/operator behaves differently in different contexts.
 
 ```python
-class Employee:
-    def show(self):
-        print("I am an employee")
-
-class Programmer(Employee):
-    def show_language(self):
-        print("I write code")
+print(1 + 2)                # 3
+print("Hello" + "World")    # HelloWorld
+print([1, 2] + [3, 4])       # [1, 2, 3, 4]
 ```
 
 ---
 
-### 8. 🧬 Types of Inheritance
+## 7. 🔄 Inheritance
 
-#### ✅ Single Inheritance
+### 🧬 Single Inheritance
 
 ```python
-class A:
+class Parent:
     pass
 
-class B(A):
+class Child(Parent):
     pass
 ```
 
-#### ✅ Multiple Inheritance
+### 🧬 Multiple Inheritance
 
 ```python
 class A:
@@ -115,7 +133,7 @@ class C(A, B):
     pass
 ```
 
-#### ✅ Multilevel Inheritance
+### 🧬 Multilevel Inheritance
 
 ```python
 class A:
@@ -130,42 +148,42 @@ class C(B):
 
 ---
 
-### 9. 🧓 `super()` Method
+## 8. 🧓 `super()` Method
 
-* Used to call the **parent class constructor** or methods
+* Used to call parent class constructor or methods.
 
 ```python
 class A:
     def __init__(self):
-        print("A constructor")
+        print("Constructor A")
 
 class B(A):
     def __init__(self):
         super().__init__()
-        print("B constructor")
+        print("Constructor B")
 ```
 
 ---
 
-### 10. 🏷️ Class Method
+## 9. 🔒 Private Attributes & Methods
 
-* Works with class variables
-* Uses `@classmethod` decorator and `cls` parameter
+* Prefix with `_` or `__` to make it private (conventionally).
+* Used to restrict direct access.
 
 ```python
-class School:
-    school_name = "ABC School"
+class Test:
+    def __init__(self):
+        self.__secret = "hidden"
 
-    @classmethod
-    def change_school(cls, name):
-        cls.school_name = name
+    def get_secret(self):
+        return self.__secret
 ```
 
 ---
 
-### 11. 🧩 Property Decorator
+## 10. 🏷️ Property Decorator
 
-* Turn a method into a **read-only attribute**
+* Used to make methods act like read-only attributes.
 
 ```python
 class Person:
@@ -179,9 +197,9 @@ class Person:
 
 ---
 
-### 12. ➕ Operator Overloading
+## 11. ➕ Operator Overloading
 
-* Customize operators for your classes using **dunder methods**
+* Customize how operators work for user-defined classes.
 
 ```python
 class Vector:
@@ -193,8 +211,18 @@ class Vector:
 
 v1 = Vector(2)
 v2 = Vector(3)
-v3 = v1 + v2  # Uses __add__
+v3 = v1 + v2
 ```
 
 ---
+
+## 12. 🗑️ `del` Keyword
+
+* Used to delete object attributes or the object itself.
+
+```python
+del obj.attribute
+del obj
+```
+
 
